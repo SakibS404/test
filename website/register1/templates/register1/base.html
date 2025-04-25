@@ -1,11 +1,17 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+
+
+<!--creating the base layout and design of the website. All styling choices mimic Sky's website-->
 
     <style type="text/css">
 
     
 
+        /* css code for thin styling bar at the very top of page */
+        /* bar is intended for decorative purposes and has a gradient color scheme to match the sky website */
 
         .decorationBarTop {
             position: fixed;
@@ -17,6 +23,9 @@
             z-index: 100;
          }
 
+
+        /* css code for styling navigation bar */
+        /* bar is intended to be directly below decorationBarTop and is white in colour */
 
 
         .navbar {
@@ -38,6 +47,9 @@
             
         }
 
+        /* css code for styling navigation bar links */
+        /* each link is grey in colour */
+
         .navbar a {
             padding: 10px 40px;
             text-align: left;
@@ -47,12 +59,17 @@
             display: inline-block;
         }
 
+
+        /* css code for styling hover effect of navigation bar links */
+        /* each link is grey in colour and show an underline hover effect */
+
         .navbar a:hover {
             text-decoration: underline;
             color: rgb(74, 74, 74);
             
         }
 
+        /* css code for sky logo placed on the left most handside of the navigation bar  */
 
         .logo {
                 height: 25px; 
@@ -62,6 +79,9 @@
         }
 
 
+        /* css code for styling bar at the bottom of navigation bar  */
+        /* bar is intended for decorative purposes and has a gradient color scheme to match the sky website. 
+        It is intended to be much thicker in size than the decorationBarTop */
 
         .decorationBarBottom {
             display: flex;
@@ -79,6 +99,9 @@
 
         }
 
+
+        /*  container for footer links and text. It is white in color and site directly above the decorationBarFoot */
+       
 
 
         .footerContainer {
@@ -98,6 +121,9 @@
 
         
 
+        /* css code for thin styling bar at the very bottom of page */
+        /* bar is intended for decorative purposes and has a gradient color scheme to match the sky website 
+        it matches in size with decorationBarTop*/
 
         .decorationBarFoot {
             position: fixed;
@@ -112,39 +138,45 @@
 
 
 
-        
 
-      
 
 
     </style>
 
+
+  <!--html code to set the character encoding standard-->
     <meta charset="utf-8">
+
+    <!--html code to control page behavior on different devices , mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    <!--html code to implement bootstrap framework -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-
+    <!--html code to set title for website using blocks which can be overridden by child templates -->
     <title>{% block title %}Create Account{% endblock %}</title>
 
 
 </head>
 
 
+
+
 <body>
     
+    
+    <!--html code to enable use of static -->
     {% load static %}
 
 
 
-
+    <!--html code to implement the content of the navigation bar -->
 
 <div class="navbar">
-    <a>
-        <img src="{% static 'image/sky_logo.png' %}" class="logo" alt="Sky Logo">
+    <a>  <!--html code for attacking sky logo to navigation bar -->
+        <img src="{% static 'image/sky_logo.png' %}" class="logo" alt="Sky Logo">  
 
 
     </a>
@@ -159,17 +191,23 @@
     <a href="">Logout</a>
 </div>
 
+
+
+<!--html code to implement decoration bars: top,bottom and foot -->
+
 <div class="decorationBarTop"></div>
 <div class="decorationBarBottom"></div>
 <div class="decorationBarFoot"></div>
 
+
+<!--html code to implement layout of page, margins and centering -->
 
 <div style="margin-top: 140px;"></div>
     <div class="row justify-content-center mt-5">
         <div class="col-md-6 col-sm-8 col-10">
             
             <hr class="mt-0 mb-4">
-            {% block content %}{% endblock %}
+            {% block content %}{% endblock %}  <!--html code allowing content to be overwritten by child templates-->
 
         </div>
     </div>
@@ -177,12 +215,13 @@
 </div>
 
 
+<!--html code to import bootstrap libraries-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-
+<!--html code to implement footer container-->
     <div class="footerContainer">
         <p>&copy; 2025 CW2 project</p>
     </div>
@@ -195,3 +234,11 @@
 
 
 </html>
+
+
+
+<!--Reference:
+Tech With Tim (2019). Django Tutorial - User Registration & Sign Up Page. 
+[online] YouTube. 
+Available at: https://www.youtube.com/watch?v=Ev5xgwndmfc 
+[Accessed 20 Apr. 2025]-->

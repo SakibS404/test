@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'register1',
-    'crispy_forms',
+    'register1',  #adding application to setting 
+    'crispy_forms',   #adding crispy forms and bootstrap to setting as applications
     'crispy_bootstrap4',
 
     
@@ -134,8 +134,29 @@ STATICFILES_DIRS = [
 
 
 
-
+#importing bootstrat frameworks 
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################
+#Reference:
+#Tech With Tim (2019). Django Tutorial - User Registration & Sign Up Page. 
+#[online] YouTube. 
+#Available at: https://www.youtube.com/watch?v=Ev5xgwndmfc 
+#[Accessed 20 Apr. 2025]
+#
+############################################################################

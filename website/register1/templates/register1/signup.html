@@ -1,21 +1,47 @@
 
 
+
+
+
+<!--html code to decalre this as a extension of the parent template-->
 {% extends "register1/base.html" %}
 
 
 {% block title %} create an account {%endblock%} 
+
+<!--html code for implementing crispy form tags and styling template-->
 {%load crispy_forms_tags%}
+
+
+<!--html code for creating a header of webpage using crispy style-->
 {%block content%}
 <h1 class="h8 mb-8">Sign Up</h1>
 
 <form method="post" class="form-group mt-4">
-    {%csrf_token%}
+    {%csrf_token%}        <!--html code to allow django to submit the signup form into its database-->
     {{ form|crispy }}
 
+    <!--html code for creating a submit button using crispy style-->
     <button type="submit" class="btn btn-primary">Register</button>
 
 </form>
-
-
-
 {%endblock %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Reference:
+Tech With Tim (2019). Django Tutorial - User Registration & Sign Up Page. 
+[online] YouTube. 
+Available at: https://www.youtube.com/watch?v=Ev5xgwndmfc 
+[Accessed 20 Apr. 2025]-->
