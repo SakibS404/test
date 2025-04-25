@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Performance Dashboard</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <svg width="100" height="40" viewBox="0 0 100 40">
+                <defs>
+                    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#FF4B4B" />
+                        <stop offset="50%" style="stop-color:#9C27B0" />
+                        <stop offset="100%" style="stop-color:#3F51B5" />
+                    </linearGradient>
+                </defs>
+                <text x="10" y="30" fill="white" font-family="Arial" font-weight="bold" font-size="24">Sky</text>
+            </svg>
+        </div>
+        <nav class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/performance" class="nav-link">View Performance</a>
+        </nav>
+        <div class="auth-section">
+            <span class="settings-text">User Settings |</span>
+           <button class="sign-in-btn">Sign In</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="date-range">
+            <input type="date" class="date-input" placeholder="DD/MM/YYYY">
+            <span class="date-separator">to</span>
+            <input type="date" class="date-input" placeholder="DD/MM/YYYY">
+            <div class="invalid-date" id="date-error"> </div>
+        </div>
+
+        <div class="status-legend">
+            <div class="status-item on-track">On Track</div>
+            <div class="status-item at-risk">At Risk</div>
+            <div class="status-item off-track">Off Track</div>
+        </div>
+
+        <div class="performance-cards" id="cards-container">
+            <!-- Cards will be added dynamically -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="gradient-bar"></div>
+        <div class="footer-content">
+            ©2025 Sky UK
+        </div>
+    </footer>
+
+    <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html>

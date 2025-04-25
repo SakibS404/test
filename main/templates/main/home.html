@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky - Home</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="left-nav">
+                <a href="/" class="logo">
+                    <img src="{% static 'main/images/sky.png' %}" alt="Sky Logo" class="sky-logo">
+                </a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/performance" class="nav-link">View Performance</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <div class="dropdown">
+                    <button class="dropdown-button">User Settings ▼</button>
+                    <div class="dropdown-content">
+                        <a href="/profile">Profile</a>
+                        <a href="/account">Account</a>
+                        <a href="/preferences">Preferences</a>
+                        <a href="/help">Help</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+                <a href="/login" class="nav-link">Sign In</a>
+            </div>
+        </div>
+        <div class="gradient-bar"></div>
+    </header>
+
+    <main class="home-content">
+        <section class="hero">
+            <h1>Welcome to Sky Performance Dashboard</h1>
+            <p>Track and analyze performance metrics across departments and teams</p>
+            <a href="/performance" class="cta-button">View Performance Dashboard</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Department Analytics</h3>
+                <p>Track performance across different departments</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Team Metrics</h3>
+                <p>Monitor team progress and achievements</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Performance Tracking</h3>
+                <p>Real-time updates on performance indicators</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="gradient-bar"></div>
+        <div class="footer-content">
+            ©2025 Sky UK
+        </div>
+    </footer>
+</body>
+</html> 

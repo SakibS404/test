@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky - Performance Dashboard</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="left-nav">
+                <a href="/" class="logo">
+                    <img src="{% static 'main/images/sky.png' %}" alt="Sky Logo" class="sky-logo">
+                </a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/performance" class="nav-link">View Performance</a>
+                </nav>
+            </div>
+            <div class="right-nav">
+                <div class="dropdown">
+                    <button class="dropdown-button">User Settings ▼</button>
+                    <div class="dropdown-content">
+                        <a href="/profile">Profile</a>
+                        <a href="/account">Account</a>
+                        <a href="/preferences">Preferences</a>
+                        <a href="/help">Help</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+                <a href="/login" class="nav-link">Sign In</a>
+            </div>
+        </div>
+        <div class="gradient-bar"></div>
+    </header>
+
+    <main class="main-content">
+        <div class="date-range">
+            <input type="date" class="date-input" id="start-date">
+            <span>to</span>
+            <input type="date" class="date-input" id="end-date">
+            <div class="error" id="date-error"></div>
+        </div>
+
+        <div class="status-legend">
+            <div class="status-item on-track">On Track</div>
+            <div class="status-item at-risk">At Risk</div>
+            <div class="status-item off-track">Off Track</div>
+        </div>
+
+        <div class="performance-cards" id="cards-container">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        ©2025 Sky UK
+    </footer>
+
+    <script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html> 

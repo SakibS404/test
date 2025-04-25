@@ -1,0 +1,464 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+    background: white;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sky-logo {
+    height: 40px; /* Adjust this value to make the logo bigger or smaller */
+    width: auto;
+    object-fit: contain;
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.right-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.gradient-bar {
+    height: 4px;
+    background: linear-gradient(90deg, 
+        #ff6b00 0%, 
+        #ff4b4b 20%, 
+        #ff1493 40%, 
+        #9c27b0 60%, 
+        #673ab7 80%, 
+        #3f51b5 100%
+    );
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #e0e0e0; /* Optional: adds a subtle line above the gradient */
+}
+
+/* Add the gradient bar to the top of the footer */
+.footer::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        #ff6b00 0%, 
+        #ff4b4b 20%, 
+        #ff1493 40%, 
+        #9c27b0 60%, 
+        #673ab7 80%, 
+        #3f51b5 100%
+    );
+}
+
+.footer-content {
+    padding: 10px 20px;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+}
+
+/* Main content adjustments */
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px; /* Add space for fixed footer */
+}
+
+/* Date range styles */
+.date-range {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-input {
+    padding: 8px;
+    border: 2px solid #0073cf;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.date-input:focus {
+    box-shadow: 0 0 8px rgba(0, 115, 207, 0.3);
+    border-color: #0095ff;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+/* Status legend */
+.status-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 14px;
+}
+
+.status-item::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.on-track::before {
+    background: #2ecc71;
+}
+
+.at-risk::before {
+    background: #f39c12;
+}
+
+.off-track::before {
+    background: #e74c3c;
+}
+
+/* Performance cards */
+.performance-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.performance-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(90deg, 
+        #ff4b4b 0%, 
+        #9c27b0 50%, 
+        #3f51b5 100%
+    );
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.metrics {
+    padding: 20px;
+}
+
+.metric {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bar {
+    flex-grow: 1;
+    height: 20px;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Bar colors to match the design */
+.on-track {
+    background: rgb(21, 236, 75);  /* Bright green */
+}
+
+.at-risk {
+    background: hsl(59, 90%, 51%);  /* Orange */
+}
+
+.off-track {
+    background: #f7250e;  /* Red */
+}
+
+.metric span {
+    min-width: 45px;
+    text-align: right;
+    color: #333;
+    font-weight: bold;
+}
+
+.view-button {
+    width: calc(100% - 40px);
+    margin: 10px 20px 20px;
+    padding: 8px;
+    background: linear-gradient(90deg, 
+        #ff4b4b 0%, 
+        #9c27b0 50%, 
+        #3f51b5 100%
+    );
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.view-button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .left-nav {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .right-nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-link {
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    .performance-cards {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .date-range {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sky-logo {
+        height: 32px; /* Slightly smaller on mobile */
+    }
+}
+
+/* Add or update these styles in your CSS file */
+.header-right .sign-in {
+    color: #0105ff; /* Sky's royal blue - you can change this to any color you want */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid #0515f3;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.header-right .sign-in:hover {
+    background-color: #053efa;
+    color: white;
+}
+
+/* If you want a different color, just replace the color codes. For example, for purple: */
+/*
+.header-right .sign-in {
+    color: #9c27b0;
+    border: 2px solid #9c27b0;
+}
+
+.header-right .sign-in:hover {
+    background-color: #9c27b0;
+    color: white;
+}
+*/
+
+/* Style for Sign In link in the right nav */
+.right-nav .nav-link:last-child,  /* For the new header */
+.auth-section .sign-in-btn {      /* For the old header */
+    color: #9c27b0;               /* Purple */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid #9c27b0;    /* Purple border */
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: transparent;       /* For the button element */
+    cursor: pointer;              /* For the button element */
+}
+
+/* Hover effect */
+.right-nav .nav-link:last-child:hover,
+.auth-section .sign-in-btn:hover {
+    background-color: #9c27b0;    /* Purple background on hover */
+    color: white;
+}
+
+/* To change the color, just replace #0073cf with any other color. Here are some examples:
+- Red: #ff4b4b
+- Purple: #9c27b0
+- Green: #2ecc71
+- Orange: #ff9800
+- Pink: #e91e63
+*/
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background: transparent;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 8px 0;
+    z-index: 1000;
+    border: 1px solid #e0e0e0;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: #0073cf; /* Sky blue color */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Add a subtle animation */
+.dropdown-content {
+    transform-origin: top right;
+    animation: dropdownFade 0.2s ease;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add a subtle arrow to dropdown items */
+.dropdown-content a {
+    position: relative;
+    padding-right: 24px;
+}
+
+.dropdown-content a:hover::after {
+    content: '›';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0073cf;
+}
+
+/* Responsive design update */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: fixed;
+        top: auto;
+        right: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dropdown-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
