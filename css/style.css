@@ -1,0 +1,301 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+    background: linear-gradient(90deg, #ff4b4b 0%, #9c27b0 50%, #3f51b5 100%);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.sky-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.auth-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-text {
+    color: white;
+}
+
+.sign-in-btn {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Main content styles */
+.main-content {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Date range styles */
+.date-range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.date-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    color: #333;
+}
+
+.date-separator {
+    color: #333;
+}
+
+.invalid-date {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Status legend styles */
+.status-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 14px;
+}
+
+.status-item::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.on-track::before {
+    background-color: #2ecc71;
+}
+
+.at-risk::before {
+    background-color: #f1c40f;
+}
+
+.off-track::before {
+    background-color: #e74c3c;
+}
+
+/* Performance cards styles */
+.performance-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.performance-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 300px;
+    padding: 0;
+    margin: 10px;
+}
+
+.card-header {
+    background: linear-gradient(90deg, #ff4b4b 0%, #9c27b0 50%, #3f51b5 100%);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.metrics {
+    padding: 20px;
+    width: 100%;
+}
+
+.metric {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bar-container {
+    flex-grow: 1;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out;
+}
+
+.on-track {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+
+.at-risk {
+    background: linear-gradient(90deg, #f1c40f, #f39c12);
+}
+
+.off-track {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.metric span {
+    min-width: 45px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Add hover effect for better visualization */
+.bar:hover {
+    opacity: 0.9;
+}
+
+/* Add animation for the bars */
+@keyframes growBar {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.bar {
+    animation: growBar 0.6s ease-out forwards;
+}
+
+.view-button {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px;
+    padding: 10px;
+    background: linear-gradient(90deg, #e91e63 0%, #9c27b0 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.view-button:hover {
+    opacity: 0.9;
+}
+
+/* Footer styles */
+.footer {
+    background: linear-gradient(90deg, #ff4b4b 0%, #9c27b0 50%, #3f51b5 100%);
+    color: white;
+    padding: 10px 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sky-logo {
+        height: 30px;
+    }
+    
+    .header {
+        padding: 10px 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .auth-section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .date-range {
+        flex-direction: column;
+    }
+
+    .status-legend {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .performance-cards {
+        padding: 0 10px;
+    }
+}
